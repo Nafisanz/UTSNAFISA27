@@ -1,0 +1,135 @@
+/* RESET */
+* {
+    margin: 0; /*biar jarak antar elemen ngga ada*/
+    padding: 0; 
+    box-sizing: border-box; /*biar ukuran elemen ngga berubah saat ditambah padding atau border*/
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, black, gray, white); /*gradasi warna background*/
+    height: 100vh; /*biar tinggi body sama dengan tinggi viewport*/
+    overflow: hidden; /*biar ngga ada scroll bar*/
+}
+
+.navbar {
+    display: flex; /*biar elemen di dalam navbar sejajar secara horizontal*/
+    justify-content: space-between; /*biar elemen di dalam navbar tersebar merata dengan jarak yang sama*/
+    padding: 20px 50px; /*biar ada jarak antara isi navbar dengan tepi layar*/
+    color: white;
+    position: absolute; /*biar navbar tetap di atas konten lainnya*/
+    top: 0; /*biar navbar berada di atas layar*/
+    width: 100%; /*biar navbar memenuhi lebar layar*/
+    z-index: 10; /*biar navbar tetap di atas konten lainnya*/
+}
+
+.nav-links { /*daftar navigasi*/
+    list-style: none; /*biar ngga ada bullet point pada daftar navigasi*/
+    display: flex; /*biar elemen di dalam daftar navigasi sejajar secara horizontal*/
+    gap: 25px; /*biar ada jarak antara elemen di dalam daftar navigasi*/
+}
+
+.nav-links a { /*link navigasi*/
+    color: white; 
+    text-decoration: none; /*biar ngga ada garis bawah pada link navigasi*/
+    transition: 0.3s; /*biar ada efek transisi saat link navigasi dihover*/
+}
+
+.nav-links a:hover { /*efek saat link navigasi dihover*/
+    color: white;
+}
+
+.hero { /*bagian utama halaman*/
+    display: flex; /*biar elemen di dalam hero sejajar secara horizontal*/
+    height: calc(100vh - 80px); /*biar tinggi hero sama dengan tinggi viewport dikurangi tinggi navbar (80px)*/
+    height: 100vh; /*biar tinggi hero sama dengan tinggi viewport, tanpa mengurangi tinggi navbar*/
+}
+
+.logo { /*logo di pojok kiri bawah*/
+    font-weight: bold; /*biar logon pojok kiri bawah tebal*/
+}
+
+/* sebelah kiri*/
+.hero-left {    
+    flex: 1; /*perbandingan 50-50 antara teks dan fotonya*/
+    display: flex; /*biar elemen di dalam hero-left sejajar secara horizontal*/
+    flex-direction: column; /*biar elemen di dalam hero-left sejajar secara vertikal*/
+    justify-content: center; /*biar elemen di dalam hero-left berada di tengah secara vertikal*/
+    padding: 50px; /*biar ada jarak antara isi hero-left dengan tepi layar*/
+}
+
+p { /*paragraf di dalam hero-left*/
+    color: #e0f7ff;
+}
+
+.hero-left h1 { /*judul di dalam hero-left*/    
+    font-size: 3rem; /*biar ukuran font judul besar*/
+    font-weight: bold; /*biar judul tebal*/
+}
+
+.typing { /*efek mengetik pada judul*/
+    font-size: 3rem; /*biar ukuran font judul besar*/
+    font-weight: bold; /*biar judul tebal*/
+    white-space: nowrap; /*biar teksnya ngga kepotong*/
+    overflow: hidden; /*biar teksnya ngga keluar dari container*/
+    border-right: 3px solid; /*biar ada garis vertikal di akhir*/
+    width: 0; /*mulai dari nol*/
+    animation: typing 2s steps(12) infinite alternate, blink 0.7s infinite; /*animasi mengetik selama 2 detik dengan langkah 12 karakter, diulang terus menerus dengan efek berkedip pada garis vertikal*/
+}
+
+@keyframes typing { /*animasi mengetik*/
+    from {width: 0;}
+    to {width: 12ch;} /*jumlah karakternya 12*/
+}
+
+@keyframes bblink { /*animasi berkedip pada garis vertikal*/
+    50% {border-color: transparent;} /*biar garis vertikal ngga terlihat saat berkedip*/
+}
+
+.desc { /*deskripsi di dalam hero-left*/
+    margin-top: 15px; /*biar ada jarak antara judul dan deskripsi*/
+    font-size: 1.2rem; /*biar ukuran font deskripsi lebih kecil dari judul*/
+}
+
+.tentang { /*tombol tentang di dalam hero-left*/
+    margin-top: 30px; /*biar ada jarak antara deskripsi dan tombol tentang*/
+    display: flex; /*biar elemen di dalam tentang sejajar secara horizontal*/
+    gap: 20px; /*biar ada jarak antara elemen di dalam tentang*/
+}
+
+.tentang a { /*link tentang di dalam hero-left*/
+    text-decoration: none; /*biar ngga ada garis bawah pada link tentang*/
+    padding: 10px 15px; /*biar ada jarak antara isi link tentang dengan tepi link tentang*/
+    background: black;
+    color: white;
+    border-radius: 20px; /*biar link tentang berbentuk seperti kapsul*/
+    transition: 0.3s; /*biar ada efek transisi saat link tentang dihover*/
+}
+
+.tentang a:hover { /*efek saat tombol tentang dihover*/
+    background: white; /*biar tombol tentang berubah warna saat ditunjuk*/
+}
+
+/*sebellah kanan, daerah bagian foto*/
+.hero-right {
+    flex: 1; /*perbandingan 50-50 antara teks dan fotonya*/
+    position: relative; /*patokan posisinya*/
+    overflow: hidden; /*merapikan bagian yang keluar dari containers*/
+    clip-path: polygon(20% 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.hero-right img { /*gambar di dalam hero-right*/
+    width: 100%; /*biar gambar memenuhi lebar container*/
+    height: 100%; /*biar gambar memenuhi tinggi container*/
+    object-fit: cover; /*biar gambar tetap proporsional dan ngga terdistorsi saat diubah ukurannya*/
+}
+
+.hero-right::before { /*efek gradasi pada gambar di dalam hero-right*/
+    content: ""; /*biar pseudo elementnya muncul*/
+    position: absolute; /*biar posisinya relatif terhadap hero-right*/
+    top: 0; /*biar berada di atas gambar*/
+    left: 0; /*biar berada di kiri gambar*/
+    width: 100%; /*biar memenuhi lebar gambar*/
+    height: 100%; /*biar memenuhi tinggi gambar*/
+    background: linear-gradient(to left, transparent, black); /*gradasi warna dari transparan ke hitam dari kanan ke kiri*/
+}

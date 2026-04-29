@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Nafisa</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">UTS NAFISA</div>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+
+        <div class="hero-left">
+            <p>Hello everybody👋!!</p>
+            <h1 class="typing">I AM NAFISA</h1>
+            <p class="desc">
+                Mahasiswa Sains Data semester 4 <br>
+                Universitas Islam Negeri Salatiga
+            </p>
+
+            <div class="tentang">
+                <a href="#" target="_blank">Portofolio</a>
+                <a href="#" target="_blank">Blog</a>
+                <a href="#" target="_blank">Gallery</a>
+            </div>
+        </div>
+
+        <div class="hero-right">
+            <img src="{% static 'image/nafisa2.jpeg' %}" alt="profile">
+        </div>
+
+    </section>
+
+</body>
+</html>
