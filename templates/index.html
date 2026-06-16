@@ -9,37 +9,119 @@
 </head>
 <body>
 
-    <nav class="navbar">
-        <div class="logo">UTS NAFISA</div>
-        <ul class="nav-links">
+    <nav>
+        <div class="logo">Porto<span>Folio</span></div>
+
+        <ul>
             <li><a href="#">Home</a></li>
             <li><a href="#">About</a></li>
             <li><a href="#">Contact</a></li>
         </ul>
     </nav>
 
-    <section class="hero">
-
-        <div class="hero-left">
-            <p>Hello everybody👋!!</p>
-            <h1 class="typing">I AM NAFISA</h1>
-            <p class="desc">
-                Mahasiswa Sains Data semester 4 <br>
-                Universitas Islam Negeri Salatiga
-            </p>
-
-            <div class="tentang">
-                <a href="#" target="_blank">Portofolio</a>
-                <a href="#" target="_blank">Blog</a>
-                <a href="#" target="_blank">Gallery</a>
-            </div>
+    <section id="home" class="hero">
+        <div class="hero-text">
+            <h1>Hii, I'm Nafisa</h1>
+            <p>Mahasiswa Program Studi Sains Data</p>
+            <a href="#about" class="btn">Selengkapnya</a>
         </div>
 
-        <div class="hero-right">
-            <img src="{% static 'image/nafisa2.jpeg' %}" alt="profile">
+        <div class="hero-image">
+            <img src="{% static 'image/nnafisa.jpeg' %}" alt="Profile">
+        </div>
+    </section>
+
+     <section id="about">
+
+        <h2>Sedikit Tentang Saya</h2>
+
+        <div class="card">
+            <p>
+                Perkenalkan, saya Nafisa. Seorang Mahasiswa dari 
+                Program Sudi Sains Data Fakultas Sains dan Teknologi (SainTek) 
+                angkatan 2024 yang sekaraang telah memasuki semester 4
+                di Universitas Islam Negeri (UIN) Salatiga. <br>
+                Salam kenal yaa!!
+            </p>
+        </div>
+
+        <h2>Biodata</h2>
+
+        <div class="biodata-container">
+
+    <div class="bio-card">
+        <h4>Nama</h4>
+        <p>Anisatun Nafisa</p>
+    </div>
+
+    <div class="bio-card">
+        <h4>Tempat Tinggal</h4>
+        <p>PonPes Ar-Rois Pulutan, Sidorejo, Salatiga</p>
+    </div>
+
+    <div class="bio-card">
+        <h4>Nomor HP</h4>
+        <p>0882006919596</p>
+    </div>
+
+    <div class="bio-card">
+        <h4>Email</h4>
+        <p>ajanafisa815@email.com</p>
+    </div>
+
+    </div>
+
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+
+        <h2>Project</h2>
+
+        <div class="project-container">
+
+            <div class="project-card">
+                <h3>Pengembangan Apk Web</h3>
+                <p>
+                    Membuat web portofolio berbasis Django yang menampilkan profil, biodata, dan project yang pernah saya kerjakan.
+                </p>
+            </div>
+
+            <div class="project-card">
+                <h3>Big Data</h3>
+                <p>
+                    Analisis Big Data menggunakan PySpark.
+                </p>
+            </div>
+
+            <div class="project-card">
+                <h3>Experience</h3>
+                <p>
+                    Beberapa organisasi dan BLK Pelatihan.
+                </p>
+            </div>
+
         </div>
 
     </section>
+
+    <!-- Contact -->
+    <section id="contact">
+
+        <h2>Contact</h2>
+
+        <div class="card">
+            <p>Email : ajanafisa815@email.com</p>
+            <p>Instagram : @nafisaaj.n</p>
+            <p>LinkedIn : Anisatun Nafisa</p>
+        </div>
+
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>~ Nafisa SD'24</p>
+    </footer>
 
 </body>
 </html>

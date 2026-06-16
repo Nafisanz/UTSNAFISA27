@@ -1,135 +1,180 @@
-/* RESET */
-* {
-    margin: 0; /*biar jarak antar elemen ngga ada*/
-    padding: 0; 
-    box-sizing: border-box; /*biar ukuran elemen ngga berubah saat ditambah padding atau border*/
-    font-family: 'Segoe UI', sans-serif;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
-body {
-    background: linear-gradient(135deg, black, gray, white); /*gradasi warna background*/
-    height: 100vh; /*biar tinggi body sama dengan tinggi viewport*/
-    overflow: hidden; /*biar ngga ada scroll bar*/
+body{
+    background:#F8FAFC;
+    color:#2D3748;
 }
 
-.navbar {
-    display: flex; /*biar elemen di dalam navbar sejajar secara horizontal*/
-    justify-content: space-between; /*biar elemen di dalam navbar tersebar merata dengan jarak yang sama*/
-    padding: 20px 50px; /*biar ada jarak antara isi navbar dengan tepi layar*/
-    color: white;
-    position: absolute; /*biar navbar tetap di atas konten lainnya*/
-    top: 0; /*biar navbar berada di atas layar*/
-    width: 100%; /*biar navbar memenuhi lebar layar*/
-    z-index: 10; /*biar navbar tetap di atas konten lainnya*/
+/* Navbar */
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 8%;
+    background:#4A6FA5;
+    position:sticky;
+    top:0;
+    box-shadow:0 2px 10px rgba(0,0,0,0.05);
 }
 
-.nav-links { /*daftar navigasi*/
-    list-style: none; /*biar ngga ada bullet point pada daftar navigasi*/
-    display: flex; /*biar elemen di dalam daftar navigasi sejajar secara horizontal*/
-    gap: 25px; /*biar ada jarak antara elemen di dalam daftar navigasi*/
+.logo{
+    font-size:24px;
+    font-weight:bold;
+    color:white;
 }
 
-.nav-links a { /*link navigasi*/
-    color: white; 
-    text-decoration: none; /*biar ngga ada garis bawah pada link navigasi*/
-    transition: 0.3s; /*biar ada efek transisi saat link navigasi dihover*/
+span {
+    color: #2D3748;
 }
 
-.nav-links a:hover { /*efek saat link navigasi dihover*/
-    color: white;
+nav ul{
+    display:flex;
+    list-style:none;
 }
 
-.hero { /*bagian utama halaman*/
-    display: flex; /*biar elemen di dalam hero sejajar secara horizontal*/
-    height: calc(100vh - 80px); /*biar tinggi hero sama dengan tinggi viewport dikurangi tinggi navbar (80px)*/
-    height: 100vh; /*biar tinggi hero sama dengan tinggi viewport, tanpa mengurangi tinggi navbar*/
+nav ul li{
+    margin-left:25px;
 }
 
-.logo { /*logo di pojok kiri bawah*/
-    font-weight: bold; /*biar logon pojok kiri bawah tebal*/
+nav ul li a{
+    text-decoration:none;
+    color:#2D3748;
+    font-weight:500;
 }
 
-/* sebelah kiri*/
-.hero-left {    
-    flex: 1; /*perbandingan 50-50 antara teks dan fotonya*/
-    display: flex; /*biar elemen di dalam hero-left sejajar secara horizontal*/
-    flex-direction: column; /*biar elemen di dalam hero-left sejajar secara vertikal*/
-    justify-content: center; /*biar elemen di dalam hero-left berada di tengah secara vertikal*/
-    padding: 50px; /*biar ada jarak antara isi hero-left dengan tepi layar*/
+nav ul li a:hover{
+    color:#4A6FA5;
 }
 
-p { /*paragraf di dalam hero-left*/
-    color: #e0f7ff;
+/* Hero */
+
+.hero{
+    padding-top: 140px;    /* Beri jarak atas agar konten tidak tertutup navbar */
+    padding-bottom: 60px;  /* Jarak bawah yang ideal dan tidak kejauhan */
+    padding-left: 8%;
+    padding-right: 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.hero-left h1 { /*judul di dalam hero-left*/    
-    font-size: 3rem; /*biar ukuran font judul besar*/
-    font-weight: bold; /*biar judul tebal*/
+
+.hero-text{
+    width:50%;
 }
 
-.typing { /*efek mengetik pada judul*/
-    font-size: 3rem; /*biar ukuran font judul besar*/
-    font-weight: bold; /*biar judul tebal*/
-    white-space: nowrap; /*biar teksnya ngga kepotong*/
-    overflow: hidden; /*biar teksnya ngga keluar dari container*/
-    border-right: 3px solid; /*biar ada garis vertikal di akhir*/
-    width: 0; /*mulai dari nol*/
-    animation: typing 2s steps(12) infinite alternate, blink 0.7s infinite; /*animasi mengetik selama 2 detik dengan langkah 12 karakter, diulang terus menerus dengan efek berkedip pada garis vertikal*/
+.hero-text h1{
+    font-size:52px;
+    margin-bottom:15px;
 }
 
-@keyframes typing { /*animasi mengetik*/
-    from {width: 0;}
-    to {width: 12ch;} /*jumlah karakternya 12*/
+.hero-text p{
+    font-size:20px;
+    margin-bottom:30px;
 }
 
-@keyframes bblink { /*animasi berkedip pada garis vertikal*/
-    50% {border-color: transparent;} /*biar garis vertikal ngga terlihat saat berkedip*/
+.btn{
+    background:#4A6FA5;
+    color:white;
+    text-decoration:none;
+    padding:12px 25px;
+    border-radius:8px;
 }
 
-.desc { /*deskripsi di dalam hero-left*/
-    margin-top: 15px; /*biar ada jarak antara judul dan deskripsi*/
-    font-size: 1.2rem; /*biar ukuran font deskripsi lebih kecil dari judul*/
+.btn:hover{
+    background:#3E5E8C;
 }
 
-.tentang { /*tombol tentang di dalam hero-left*/
-    margin-top: 30px; /*biar ada jarak antara deskripsi dan tombol tentang*/
-    display: flex; /*biar elemen di dalam tentang sejajar secara horizontal*/
-    gap: 20px; /*biar ada jarak antara elemen di dalam tentang*/
+.hero-image{
+    width:40%;
+    text-align:center;
 }
 
-.tentang a { /*link tentang di dalam hero-left*/
-    text-decoration: none; /*biar ngga ada garis bawah pada link tentang*/
-    padding: 10px 15px; /*biar ada jarak antara isi link tentang dengan tepi link tentang*/
-    background: black;
-    color: white;
-    border-radius: 20px; /*biar link tentang berbentuk seperti kapsul*/
-    transition: 0.3s; /*biar ada efek transisi saat link tentang dihover*/
+.hero-image img{
+    width:200px;
+    height:200px;
+    object-fit:cover;
+    border-radius:50%;
+    border:6px solid #A7C7E7;
 }
 
-.tentang a:hover { /*efek saat tombol tentang dihover*/
-    background: white; /*biar tombol tentang berubah warna saat ditunjuk*/
+/* Section */
+
+section{
+    padding:80px 8%;
 }
 
-/*sebellah kanan, daerah bagian foto*/
-.hero-right {
-    flex: 1; /*perbandingan 50-50 antara teks dan fotonya*/
-    position: relative; /*patokan posisinya*/
-    overflow: hidden; /*merapikan bagian yang keluar dari containers*/
-    clip-path: polygon(20% 0, 100% 0, 100% 100%, 0% 100%);
+section h2{
+    text-align:center;
+    margin-bottom:30px;
+    color:#2D3748;
 }
 
-.hero-right img { /*gambar di dalam hero-right*/
-    width: 100%; /*biar gambar memenuhi lebar container*/
-    height: 100%; /*biar gambar memenuhi tinggi container*/
-    object-fit: cover; /*biar gambar tetap proporsional dan ngga terdistorsi saat diubah ukurannya*/
+.card{
+    background:#9cb5cb;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.05);
+    margin-bottom:30px;
+    text-align: justify;
 }
 
-.hero-right::before { /*efek gradasi pada gambar di dalam hero-right*/
-    content: ""; /*biar pseudo elementnya muncul*/
-    position: absolute; /*biar posisinya relatif terhadap hero-right*/
-    top: 0; /*biar berada di atas gambar*/
-    left: 0; /*biar berada di kiri gambar*/
-    width: 100%; /*biar memenuhi lebar gambar*/
-    height: 100%; /*biar memenuhi tinggi gambar*/
-    background: linear-gradient(to left, transparent, black); /*gradasi warna dari transparan ke hitam dari kanan ke kiri*/
+.biodata-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+
+.bio-card{
+    background:#9cb5cb;
+    padding:20px;
+    border-radius:12px;
+    box-shadow:0 3px 10px rgba(0,0,0,0.08);
+}
+
+.bio-card h4{
+    color:#4A6FA5;
+    margin-bottom:10px;
+}
+
+/* Projects */
+
+.project-container{
+    display:flex;
+    gap:25px;
+    flex-wrap:wrap;
+}
+
+.project-card{
+    flex:1;
+    min-width:250px;
+    background:#9cb5cb;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.05);
+    transition:0.3s;
+}
+
+.project-card:hover{
+    transform:translateY(-5px);
+}
+
+.project-card h3{
+    margin-bottom:15px;
+    color:#4A6FA5;
+}
+
+/* Footer */
+
+footer{
+    background:#4A6FA5;
+    color:white;
+    text-align:center;
+    padding:20px;
 }
