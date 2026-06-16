@@ -1,0 +1,10 @@
+{
+    "builds": [{
+        "src": "UTS_Nafisa/wsgi.py",
+        "use": "@vercel/python"
+    }],
+    "routes": [{
+        "src": "/(.*)",
+        "dest": "UTS_Nafisa/wsgi.py"
+    }]
+}
