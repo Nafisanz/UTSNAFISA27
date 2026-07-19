@@ -1,126 +1,214 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Nafisa</title>
+    <title>Portofolio - Anisatun Nafisa</title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
 <body>
 
-    <nav>
-        <div class="logo">Porto<span>Folio</span></div>
-
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-    </nav>
-
-    <section id="home" class="hero">
-        <div class="hero-text">
-            <h1>Hii, I'm Nafisa</h1>
-            <p>Mahasiswa Program Studi Sains Data</p>
-            <a href="#about" class="btn">Selengkapnya</a>
+    <!-- NAVBAR (Slide 1) -->
+    <header class="navbar">
+        <div class="navbar-container">
+            <a href="#" class="brand-logo">nafisa.anz</a>
+            <nav class="nav-menu">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
         </div>
+    </header>
 
-        <div class="hero-image">
-            <img src="{% static 'image/nnafisa.jpeg' %}" alt="Profile">
-        </div>
-    </section>
+    <main>
+        <!-- HERO SECTION / HOME (Slide 1) -->
+        <section id="home" class="hero-section">
+            <div class="hero-container">
+                <div class="hero-image-wrapper">
+                    <!-- Placeholder untuk foto berlatar brush merah/terrakota -->
+                    <div class="hero-bg-brush"></div>
+                    <img src="{% static 'image/bg1.png' %}" alt="Profile" class="profile-img">
+                </div>
+                <div class="hero-content">
+                    <h1 class="hero-title">
+                        <span class="text-accent">ANISATUN</span>
+                        <span class="text-white">NAFISA</span>
+                    </h1>
+                    <p class="hero-subtitle">Data Science Student | Web Developer</p>
+                </div>
+            </div>
+        </section>
 
-     <section id="about">
-
-        <h2>Sedikit Tentang Saya</h2>
-
-        <div class="card">
-            <p>
-                Perkenalkan, saya Nafisa. Seorang Mahasiswa dari 
-                Program Sudi Sains Data Fakultas Sains dan Teknologi (SainTek) 
-                angkatan 2024 yang sekaraang telah memasuki semester 4
-                di Universitas Islam Negeri (UIN) Salatiga. <br>
-                Salam kenal yaa!!
-            </p>
-        </div>
-
-        <h2>Biodata</h2>
-
-        <div class="biodata-container">
-
-    <div class="bio-card">
-        <h4>Nama</h4>
-        <p>Anisatun Nafisa</p>
-    </div>
-
-    <div class="bio-card">
-        <h4>Tempat Tinggal</h4>
-        <p>PonPes Ar-Rois Pulutan, Sidorejo, Salatiga</p>
-    </div>
-
-    <div class="bio-card">
-        <h4>Nomor HP</h4>
-        <p>0882006919596</p>
-    </div>
-
-    <div class="bio-card">
-        <h4>Email</h4>
-        <p>ajanafisa815@email.com</p>
-    </div>
-
-    </div>
-
-    </section>
-
-    <!-- Projects -->
-    <section id="projects">
-
-        <h2>Project</h2>
-
-        <div class="project-container">
-
-            <div class="project-card">
-                <h3>Pengembangan Apk Web</h3>
-                <p>
-                    Membuat web portofolio berbasis Django yang menampilkan profil, biodata, dan project yang pernah saya kerjakan.
+        <!-- WELCOME SECTION (Slide 2) -->
+        <section class="welcome-section">
+            <div class="container-sm">
+                <h2 class="welcome-heading">
+                    Tak Kenal Maka<br>
+                    <span class="text-accent">Tak Sayang,</span>
+                </h2>
+                <p class="welcome-text">
+                    Selamat Datang di Project Portofolio saya. Bagian dari tugas Mata Kuliah Pengembangan Apk Web yang menumbuhkan minat tersendiri.
                 </p>
             </div>
+        </section>
 
-            <div class="project-card">
-                <h3>Big Data</h3>
-                <p>
-                    Analisis Big Data menggunakan PySpark.
-                </p>
+        <!-- ABOUT SECTION (Slide 3) -->
+        <section id="about" class="about-section">
+            <div class="about-container">
+                <div class="about-avatar-wrapper">
+                    <!-- Ilustrasi siluet estetik -->
+                    <div class="avatar-glow"></div>
+                    <img src="{% static 'image/bg3.png' %}" alt="Siluet Ilustrasi" class="about-avatar">
+                </div>
+                <div class="about-content">
+                    <p>
+                        Saya adalah seorang mahasiswa Program Studi Sains Data angkatan 2024 di Universitas Islam Negeri (UIN) Salatiga yang tertarik di bidang pengembangan web dan web portofolio ini adalah project pertama saya yang berhasil di deploy atas arahan dari dosen saya.
+                    </p>
+                </div>
             </div>
+        </section>
 
-            <div class="project-card">
-                <h3>Experience</h3>
-                <p>
-                    Beberapa organisasi dan BLK Pelatihan.
-                </p>
+        <!-- SKILLS SECTION (Slide 4 & 5) -->
+        <section class="skills-section">
+            <div class="container">
+                <h2 class="section-title text-accent">SKILLS</h2>
+                <div class="skills-grid">
+                    <!-- Skill 1 -->
+                    <div class="skill-item">
+                        <span class="skill-name">Python</span>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar" style="width: 50%;"></div>
+                        </div>
+                    </div>
+                    <!-- Skill 2 -->
+                    <div class="skill-item">
+                        <span class="skill-name">HTML</span>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar" style="width: 50%;"></div>
+                        </div>
+                    </div>
+                    <!-- Skill 3 -->
+                    <div class="skill-item">
+                        <span class="skill-name">CSS</span>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar" style="width: 55%;"></div>
+                        </div>
+                    </div>
+                    <!-- Skill 4 -->
+                    <div class="skill-item">
+                        <span class="skill-name">Ms. Word</span>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar" style="width: 50%;"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
+        </section>
 
-        </div>
+        <!-- PROJECT TIMELINE SECTION (Slide 6) -->
+        <section class="project-section">
+            <div class="container">
+                <h2 class="section-title text-accent">PROJECT</h2>
+                <div class="timeline-container">
+                    <!-- Jalur garis kustom -->
+                    <div class="timeline-row row-top">
+                        <div class="timeline-node">
+                            <div class="node-dot"></div>
+                            <h3 class="node-title">Pengembangan Apk Web</h3>
+                            <p class="node-desc">Membuat Web Portofolio & di Deploy</p>
+                        </div>
+                        <div class="timeline-node">
+                            <div class="node-dot"></div>
+                            <h3 class="node-title">Big Data</h3>
+                            <p class="node-desc">Analisis Big Data menggunakan PySpark</p>
+                        </div>
+                        <div class="timeline-node">
+                            <div class="node-dot"></div>
+                            <h3 class="node-title">Kewirausahaan</h3>
+                            <p class="node-desc">Bikin Lumpia Ubi Ungu</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-connector-loop"></div>
 
-    </section>
+                    <div class="timeline-row row-bottom">
+                        <div class="timeline-node">
+                            <div class="node-dot"></div>
+                            <h3 class="node-title">Dashboard dan Laporan</h3>
+                        </div>
+                        <div class="timeline-node">
+                            <div class="node-dot"></div>
+                            <h3 class="node-title">Bikin Book Chapter</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <!-- Contact -->
-    <section id="contact">
+        <!-- EXPERIENCE SECTION (Slide 7) -->
+        <section class="experience-section">
+            <div class="container">
+                <h2 class="section-title text-white font-large">PENGALAMAN</h2>
+                <div class="experience-list">
+                    <div class="exp-item">
+                        <h3 class="exp-title">HMPS Sains Data</h3>
+                        <p class="exp-subtitle">Div. Sosial dan Keagamaan</p>
+                    </div>
+                    <div class="exp-item">
+                        <h3 class="exp-title">KOPMA</h3>
+                        <p class="exp-subtitle">Anggota</p>
+                    </div>
+                    <div class="exp-item">
+                        <h3 class="exp-title">OSIS Madrasah Aliyah</h3>
+                        <p class="exp-subtitle">Anggota</p>
+                    </div>
+                    <div class="exp-item">
+                        <h3 class="exp-title">Balai Latihan Kerja</h3>
+                        <p class="exp-subtitle">Desain Mode</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        <h2>Contact</h2>
+        <!-- CTA ACTION SECTION (Slide 8) -->
+        <section class="cta-section">
+            <div class="cta-container">
+                <div class="cta-image-side">
+                    <!-- Sisi kiri foto sepatu/estetik -->
+                    <img src="{% static 'image/bg2.jpg' %}" alt="Footwear Aesthetic" class="cta-img">
+                </div>
+                <div class="cta-buttons-side">
+                    <a href="{% static 'pdf/CVAnisatunNafisa.pdf' %}" target="_blank" class="btn-custom">CV</a>
+                    <a href="mailto:ajanafisa815@gmail.com?subject=Halo&body=Halo%20Annisatun,%20saya%20tertarik%20dengan%20portofolio%20Anda." class="btn-custom">Kirim Pesan</a>
+                </div>
+            </div>
+        </section>
 
-        <div class="card">
-            <p>Email : ajanafisa815@email.com</p>
-            <p>Instagram : @nafisaaj.n</p>
-            <p>LinkedIn : Anisatun Nafisa</p>
-        </div>
+        <!-- SOCIAL MEDIA/CONTACT SECTION (Slide 9) -->
+        <section id="contact" class="social-section">
+            <div class="container text-center">
+                <h2 class="social-title text-accent">FOLLOW ME</h2>
+                <div class="social-icons-grid">
+                    <!-- Baris Atas -->
+                    <a href="https://wa.me/62882007112201" class="icon-link" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp" alt="WhatsApp"></i></a>
+                    <a href="https://instagram.com/nafisaaj.n" class="icon-link" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram" alt="Instagram"></i></a>
+                    <a href="https://tiktok.com/@aaanzz.999" class="icon-link" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-tiktok" alt="TikTok"></i></a>
+                    <a href="mailto:ajanafisa815@gmail.com" class="icon-link" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-envelope" alt="Email"></i></a>
+                    <!-- Baris Bawah -->
+                    <a href="https://x.com/nafisaabz" class="icon-link" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-x-twitter" alt="X"></i></a>
+                    <a href="https://youtube.com/@anisatunnnafisa18" class="icon-link" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-youtube" alt="YouTube"></i></a>
+                    <a href="https://linkedin.com/in/anisatun-nafisa" class="icon-link" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin" alt="LinkedIn"></i></a>
+                </div>
+            </div>
+        </section>
+    </main>
 
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <p>~ Nafisa SD'24</p>
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>&copy; 2026 nafisa.anz. All Rights Reserved.</p>
     </footer>
 
 </body>
