@@ -1,526 +1,665 @@
-/* ==========================================================================
-   RESET & BASE STYLES
-   ========================================================================== */
+/* ================= RESET & VARIABLES ================= */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-gradient-start: #081326;
+  --bg-gradient-end: #02060d;
+  --text-white: #ffffff;
+  --text-muted: #d0d7de;
+  --accent-blue: #388bfd;
+  --gauge-blue: #58a6ff;
+  --btn-bg: #213547;
+  --card-bg: #1c2735;
+  --card-border: #3b82f6;
+  --font-main: 'Plus Jakarta Sans', sans-serif;
 }
 
 body {
-    background-color: #000000;
-    color: #ffffff;
-    font-family: 'Poppins', 'Inter', 'Segoe UI', sans-serif;
-    overflow-x: hidden;
-    line-height: 1.6;
+  font-family: var(--font-main);
+  background: linear-gradient(135deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%);
+  color: var(--text-white);
+  line-height: 1.6;
+  overflow-x: hidden;
 }
 
-.container {
-    width: 100%;
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 80px 24px;
-}
-
-.container-sm {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 100px 24px;
-}
-
-.text-accent {
-    color: #c5a880;
-}
-
-.text-white {
-    color: #ffffff;
-}
-
-.text-center {
-    text-align: center;
-}
-
-/* ==========================================================================
-   NAVBAR (Slide 1)
-   ========================================================================== */
+/* ================= NAVIGASI ================= */
 .navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.85);
-    backdrop-filter: blur(10px);
-    z-index: 1000;
+  width: 100%;
+  padding: 2rem 4rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
 }
 
-.navbar-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 24px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .brand-logo {
-    color: #ffffff;
-    font-size: 1.5rem;
-    font-weight: 700;
-    text-decoration: none;
-    letter-spacing: -0.5px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-white);
+  text-decoration: none;
+  letter-spacing: -0.5px;
 }
 
-.nav-menu {
-    display: flex;
-    gap: 32px;
+.nav-links {
+  display: flex;
+  gap: 2rem;
 }
 
-.nav-link {
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 1.1rem;
-    font-weight: 400;
-    transition: color 0.3s ease;
+.nav-links a {
+  color: var(--text-white);
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 400;
+  transition: opacity 0.3s ease;
 }
 
-.nav-link:hover {
-    color: #c5a880;
+.nav-links a:hover {
+  opacity: 0.7;
 }
 
-/* ==========================================================================
-   HERO SECTION (Slide 1)
-   ========================================================================== */
-.hero-section {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-top: 80px;
+/* ================= COMMON SECTION ================= */
+.section {
+  min-height: 100vh;
+  padding: 6rem 2rem 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
+.section-heading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  align-self: flex-start;
+  margin-bottom: 3rem;
+  text-transform: uppercase;
+}
+
+/* ================= HERO SECTION ================= */
 .hero-container {
-    max-width: 1100px;
-    width: 100%;
-    margin: 0 auto;
-    padding: 0 24px;
-    display: flex;
-    align-items: center;
-    gap: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 3rem;
 }
 
 .hero-image-wrapper {
-    position: relative;
-    width: 40%;
-    display: flex;
-    justify-content: center;
+  position: relative;
+  width: 400px;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
 }
 
-/* Aksen Background Brush Merah/Terrakota dari Canva */
-.hero-bg-brush {
-    position: absolute;
+.brush-bg {
+  position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) rotate(-5deg);
     width: 115%;
     height: 115%;
-    background: linear-gradient(135deg, #800c1c 0%, #cf856b 100%);
-    clip-path: polygon(10% 0%, 100% 10%, 90% 90%, 0% 85%); /* Efek potongan abstrak mirip kuas */
+    background: linear-gradient(135deg, #f0e5d1, #d9cbb7);
+    clip-path: polygon(10% 20%, 80% 50%, 75% 90%, 0% 85%); /* Efek potongan abstrak mirip kuas */
     z-index: 1;
-    border-radius: 24px;
+    filter: blur(1px);
 }
 
-.profile-img {
-    position: relative;
-    width: 100%;
-    max-width: 320px;
-    height: auto;
-    object-fit: cover;
-    z-index: 2;
-    border-radius: 16px;
+.hero-img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  position: relative;
+  z-index: 2;
+  border-radius: 4px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 320px;
 }
 
 .hero-content {
-    width: 60%;
+  width: 60%;
 }
 
 .hero-title {
-    font-size: 3.5rem;
-    line-height: 1.1;
-    font-weight: 700;
-    letter-spacing: 1px;
-    margin-bottom: 16px;
-    display: flex;
-    flex-direction: column;
+  font-size: 4rem;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -1px;
+  margin-bottom: 1rem;
 }
 
 .hero-subtitle {
-    font-size: 1.35rem;
-    color: #e0e0e0;
-    font-weight: 300;
-    border-left: 2px solid #ffffff;
-    padding-left: 12px;
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: var(--text-muted);
 }
 
-/* ==========================================================================
-   WELCOME SECTION (Slide 2)
-   ========================================================================== */
-.welcome-section {
-    background-color: #000000;
+/* ================= INTRO & BIO SECTIONS ================= */
+.intro-container, .bio-container {
+  width: 100%;
+  max-width: 900px;
 }
 
-.welcome-heading {
-    font-size: 3rem;
-    line-height: 1.2;
-    margin-bottom: 24px;
-    font-weight: 600;
+.quote-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 2rem;
 }
 
-.welcome-text {
-    font-size: 1.5rem;
-    color: #ffffff;
-    font-weight: 300;
-    max-width: 700px;
+.quote-text {
+  font-size: 1.8rem;
+  font-weight: 300;
+  color: var(--text-muted);
+  line-height: 1.4;
 }
 
-/* ==========================================================================
-   ABOUT SECTION (Slide 3)
-   ========================================================================== */
-.about-section {
-    padding: 80px 24px;
+.bio-container {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
 }
 
-.about-container {
-    max-width: 1000px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    gap: 64px;
+.graphic-img {
+  width: 350px;
+  height: auto;
 }
 
-.about-avatar-wrapper {
-    position: relative;
-    width: 35%;
+.bio-text p {
+  font-size: 1.5rem;
+  font-weight: 300;
+  line-height: 1.5;
 }
 
-.avatar-glow {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle, rgba(197,168,128,0.2) 0%, rgba(0,0,0,0) 70%);
-    z-index: 1;
+/* ================= BRAND HIGHLIGHT ================= */
+.brand-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
 }
 
-.about-avatar {
-    width: 100%;
-    height: auto;
-    position: relative;
-    z-index: 2;
-    filter: drop-shadow(0 0 15px rgba(197, 168, 128, 0.3));
+.brand-logo-card {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
 }
 
-.about-content {
-    width: 65%;
-    font-size: 1.35rem;
-    font-weight: 300;
-    color: #e0e0e0;
-    text-align: justify;
+.dm-logo {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
-/* ==========================================================================
-   SKILLS SECTION (Slide 4 & 5)
-   ========================================================================== */
-.section-title {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 48px;
-    letter-spacing: 2px;
+.brand-title {
+  font-size: 1.8rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+  font-weight: bold;
 }
 
-.font-large {
-    font-size: 2.8rem;
+/* ================= PROJECTS SECTION ================= */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  width: 100%;
 }
 
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 40px 64px;
+.project-card {
+  background-color: var(--card-bg);
+  border-radius: 20px;
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transition: transform 0.3s ease;
 }
 
-.skill-item {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+.card-image-box {
+  width: 100%;
+  height: 180px;
+  border-radius: 15px;
+  border: 3px solid var(--card-border);
+  overflow: hidden;
+}
+
+.card-image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-body h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+
+.card-body p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.add-card {
+  justify-content: center;
+  align-items: center;
+  min-height: 320px;
+  cursor: pointer;
+}
+
+.add-icon {
+  font-size: 3rem;
+  color: var(--text-white);
+}
+
+/* ================= SKILLS SECTION (NEW CIRCLE DESIGN) ================= */
+.skills-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  width: 100%;
+}
+
+.skills-heading {
+  font-size: 3rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: var(--text-white);
+  margin-bottom: 3.5rem;
+  align-self: center; /* Di posisi tengah sesuai gambar */
+  text-transform: uppercase;
+}
+
+.skills-container {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  width: 100%;
+  max-width: 900px;
+  align-items: center;
+}
+
+.skills-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 11rem;
+  width: 100%;
+}
+
+.skill-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+/* Circular Progress Style */
+.circle-progress {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  /* Lingkaran progress luar menggunakan conic-gradient */
+  background: conic-gradient(#1d8cd8 var(--percent), transparent 0deg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.circle-inner {
+  width: 105px;
+  height: 105px;
+  border-radius: 50%;
+  background-color: #f0f0f0; /* Warna putih/terang di dalam lingkaran */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.percentage {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #222222; /* Warna angka gelap agar kontras */
+  font-family: var(--font-main);
 }
 
 .skill-name {
-    font-size: 1.35rem;
-    font-weight: 300;
-    color: #e0e0e0;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--text-white);
+  letter-spacing: 0.5px;
 }
 
-.progress-bar-container {
-    width: 100%;
-    height: 40px;
-    border: 2px solid #c5a880;
-    background-color: transparent;
-    padding: 4px;
-    overflow: hidden;
-}
-
-.progress-bar {
-    height: 100%;
-    background-color: #c5a880;
-    /* Membuat pola garis arsiran miring menyerupai visual di Canva */
-    background-image: linear-gradient(
-        45deg,
-        #b59770 25%,
-        transparent 25%,
-        transparent 50%,
-        #b59770 50%,
-        #b59770 75%,
-        transparent 75%,
-        transparent
-    );
-    background-size: 20px 20px;
-}
-
-/* ==========================================================================
-   PROJECT TIMELINE (Slide 6)
-   ========================================================================== */
-.timeline-container {
-    position: relative;
-    padding: 60px 0;
-    display: flex;
-    flex-direction: column;
-    gap: 80px;
-}
-
-.timeline-row {
-    display: flex;
-    justify-content: space-between;
-    position: relative;
-    width: 100%;
-}
-
-.row-top {
-    border-bottom: 3px solid #ffffff;
-    padding-bottom: 24px;
-}
-
-.row-bottom {
-    justify-content: flex-end;
-    gap: 150px;
-    padding-top: 24px;
-}
-
-/* Loop penghubung siku kanan ala infografis Canva */
-.timeline-connector-loop {
-    position: absolute;
-    right: -15px;
-    top: 100px;
-    width: 40px;
-    height: 110px;
-    border-top: 3px solid #ffffff;
-    border-right: 3px solid #ffffff;
-    border-bottom: 3px solid #ffffff;
-    border-top-right-radius: 24px;
-    border-bottom-right-radius: 24px;
-}
-
-.timeline-node {
-    position: relative;
-    flex: 1;
-    max-width: 280px;
-}
-
-.node-dot {
-    position: absolute;
-    width: 16px;
-    height: 16px;
-    background-color: #c5a880;
-    border-radius: 50%;
-    left: 0;
-}
-
-.row-top .node-dot {
-    bottom: -34px;
-}
-
-.row-bottom .node-dot {
-    top: -34px;
-    background-color: #c5a880;
-}
-
-.node-title {
-    font-size: 1.15rem;
-    font-weight: 600;
-    margin-bottom: 8px;
-    color: #ffffff;
-}
-
-.node-desc {
-    font-size: 0.95rem;
-    color: #b0b0b0;
-    font-weight: 300;
-}
-
-/* ==========================================================================
-   EXPERIENCE SECTION (Slide 7)
-   ========================================================================== */
-.experience-list {
-    position: relative;
-    padding-left: 32px;
-    border-left: 3px solid #ffffff;
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-}
-
-.exp-item {
-    position: relative;
-}
-
-/* Titik lingkaran penanda di garis */
-.exp-item::before {
-    content: '';
-    position: absolute;
-    left: -42px;
-    top: 6px;
-    width: 18px;
-    height: 18px;
-    background-color: #c5a880;
-    border-radius: 50%;
-}
-
-.exp-title {
-    font-size: 1.5rem;
-    color: #c5a880;
-    font-weight: 600;
-    margin-bottom: 4px;
-}
-
-.exp-subtitle {
-    font-size: 1.2rem;
-    color: #ffffff;
-    font-weight: 300;
-}
-
-/* ==========================================================================
-   CTA ACTION SECTION (Slide 8)
-   ========================================================================== */
-.cta-section {
-    padding: 0;
-    background-color: #000000;
-}
-
-.cta-container {
-    display: flex;
-    width: 100%;
-    min-height: 450px;
-}
-
-.cta-image-side {
-    width: 50%;
-}
-
-.cta-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.cta-buttons-side {
-    width: 50%;
-    background-color: #000000;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 32px;
-    padding: 40px;
-}
-
-/* Desain Kustom Tombol Kapsul Bermotif Garis */
-.btn-custom {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    max-width: 320px;
-    height: 54px;
-    background-color: #f5dcba; /* Krem terang basis */
-    background-image: linear-gradient(
-        45deg, 
-        rgba(197, 168, 128, 0.15) 25%, 
-        transparent 25%, 
-        transparent 50%, 
-        rgba(197, 168, 128, 0.15) 50%, 
-        rgba(197, 168, 128, 0.15) 75%, 
-        transparent 75%, 
-        transparent
-    );
-    background-size: 15px 15px;
-    color: #000000;
-    text-decoration: none;
-    font-size: 1.25rem;
-    font-weight: 700;
-    border-radius: 50px;
-    box-shadow: 0 4px 15px rgba(245, 220, 186, 0.2);
-    transition: transform 0.2s ease, opacity 0.2s ease;
-}
-
-.btn-custom:hover {
-    transform: translateY(-2px);
-    opacity: 0.95;
-}
-
-.btn-download {
-    display: inline-block;
-    padding: 12px 24px;
-    border: 2px solid #00ff88;
-    color: #00ff88;
-    text-decoration: none;
-    border-radius: 8px;
-    transition: 0.3s;
-}
-
-/* ==========================================================================
-   SOCIAL MEDIA SECTION (Slide 9)
-   ========================================================================== */
-.social-section {
-    background-color: #000000;
-}
-
-.social-title {
-    font-size: 2.8rem;
-    font-weight: 700;
-    margin-bottom: 56px;
-    letter-spacing: 1px;
-}
-
-.social-icons-grid {
-    display: flex;
+/* Responsive adjustment */
+@media (max-width: 768px) {
+  .skills-row {
     flex-wrap: wrap;
-    justify-content: center;
-    gap: 40px;
-    max-width: 650px;
-    margin: 0 auto;
+    gap: 2rem;
+  }
+
+  .circle-progress {
+    width: 110px;
+    height: 110px;
+  }
+
+  .circle-inner {
+    width: 82px;
+    height: 82px;
+  }
+
+  .percentage {
+    font-size: 1.4rem;
+  }
+
+  .skills-heading {
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+  }
 }
 
-.icon-link {
-    transition: transform 0.2s ease;
+/* ================= EXPERIENCE TIMELINE ================= */
+.timeline {
+  position: relative;
+  border-left: 2px solid #ffffff;
+  padding-left: 2rem;
+  margin-left: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  align-self: flex-start;
 }
 
-.icon-link:hover {
-    transform: scale(1.1);
+.timeline-item {
+  position: relative;
 }
 
-/* ==========================================================================
-   FOOTER
-   ========================================================================== */
+.timeline-dot {
+  position: absolute;
+  left: -2.45rem;
+  top: 0.2rem;
+  width: 12px;
+  height: 12px;
+  background: #ffffff;
+  border-radius: 50%;
+}
+
+.timeline-content h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.timeline-content p {
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+
+/* ================= CONTACT SECTION ================= */
+.contact-container {
+  display: flex;
+  width: 70%;
+  gap: 4rem;
+  align-items: center;
+  
+}
+
+.photo-collage {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  flex: 1;
+  margin-right: 2rem;
+}
+
+.collage-img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.contact-details {
+  flex: 1;
+}
+
+.contact-title {
+  font-size: 3rem;
+  font-weight: 550;
+  margin-bottom: 2rem;
+}
+
+.contact-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.btn-contact {
+  background: var(--btn-bg);
+  color: var(--text-white);
+  padding: 1rem 1.5rem;
+  border-radius: 30px;
+  text-decoration: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.1rem;
+  transition: background 0.3s ease;
+}
+
+.btn-contact:hover {
+  background: #2c4760;
+}
+
+.btn-icon {
+  background: rgba(255, 255, 255, 0.2);
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ================= ACTION SECTION ================= */
+.action-container {
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+  width: 100%;
+  justify-content: center;
+}
+
+.film-strip {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background: #f1e5d1;
+  padding: 1rem;
+  border-radius: 4px;
+  width: 300px;
+  margin-right: 10rem;
+}
+
+.film-strip img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.action-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.btn-action {
+  background: var(--btn-bg);
+  color: var(--text-white);
+  padding: 1.2rem 4rem;
+  border-radius: 35px;
+  text-decoration: none;
+  font-size: 1.8rem;
+  font-weight: 700;
+  position: relative;
+  display: inline-block;
+  text-align: center;
+}
+
+.action-icon {
+  position: absolute;
+  right: -20px;
+  top: -15px;
+  font-size: 2rem;
+}
+
+/* ================= MEDIA QUERIES (RESPONSIVE) ================= */
+@media (max-width: 992px) {
+  .hero-container, .bio-container, .contact-container, .action-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .timeline {
+    align-self: center;
+  }
+
+  .hero-title {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    padding: 1.5rem 1.5rem;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .quote-title {
+    font-size: 2.2rem;
+  }
+
+  .quote-text, .bio-text p {
+    font-size: 1.1rem;
+  }
+
+  .hero-image-wrapper {
+    width: 280px;
+    height: 360px;
+  }
+}
+
+/* ================= FOLLOW ME SECTION ================= */
+.follow-section {
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.follow-title {
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  color: rgba(255, 255, 255, 0.4);;
+  margin-bottom: 3.5rem;
+  text-transform: uppercase;
+}
+
+.social-links-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.social-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.social-icon-btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 40px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.social-icon-btn:hover {
+  transform: translateY(-5px) scale(1.08);
+  opacity: 0.9;
+}
+
+.social-row a {
+  color: #00D2FF;
+  text-decoration: none;
+  font-size: 2rem;
+  transition: color 0.3s ease;
+}
+
+/* Responsive adjustment */
+@media (max-width: 600px) {
+  .follow-title {
+    font-size: 2.2rem;
+    margin-bottom: 2.5rem;
+  }
+  
+  .social-row {
+    gap: 1.5rem;
+  }
+  
+  .social-icon-btn {
+    width: 48px;
+    height: 48px;
+  }
+}
+
 .footer {
     text-align: center;
     padding: 40px 24px;
@@ -528,89 +667,3 @@ body {
     color: #666666;
     font-size: 0.9rem;
 }
-
-/* ==========================================================================
-   RESPONSIVE MEDIA QUERIES (HP & Laptop)
-   ========================================================================== */
-@media (max-width: 992px) {
-    .hero-container {
-        flex-direction: column;
-        text-align: center;
-        gap: 40px;
-    }
-    .hero-image-wrapper {
-        width: 65%;
-    }
-    .hero-content {
-        width: 100%;
-    }
-    .hero-subtitle {
-        border-left: none;
-        padding-left: 0;
-    }
-    .about-container {
-        flex-direction: column;
-        gap: 40px;
-    }
-    .about-avatar-wrapper, .about-content {
-        width: 100%;
-    }
-    .skills-grid {
-        grid-template-columns: 1fr;
-        gap: 24px;
-    }
-    .timeline-row {
-        flex-direction: column;
-        gap: 40px;
-    }
-    .row-top {
-        border-bottom: none;
-    }
-    .timeline-connector-loop {
-        display: none;
-    }
-    .row-bottom {
-        justify-content: flex-start;
-        padding-top: 0;
-        gap: 40px;
-    }
-    .node-dot {
-        left: -24px;
-        top: 8px !important;
-        bottom: auto !important;
-    }
-    .timeline-container {
-        padding-left: 32px;
-        border-left: 2px solid #ffffff;
-        gap: 40px;
-    }
-    .cta-container {
-        flex-direction: column;
-    }
-    .cta-image-side, .cta-buttons-side {
-        width: 100%;
-    }
-}
-
-@media (max-width: 576px) {
-    .hero-title {
-        font-size: 2.5rem;
-    }
-    .welcome-heading {
-        font-size: 2.2rem;
-    }
-    .welcome-text, .about-content {
-        font-size: 1.1rem;
-    }
-    .nav-menu {
-        gap: 16px;
-    }
-    .social-icons-grid {
-        gap: 24px;
-    }
-    .icon-link img {
-        width: 48px;
-        height: 48px;
-    }
-}
-

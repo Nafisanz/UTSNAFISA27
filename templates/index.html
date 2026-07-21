@@ -2,214 +2,341 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portofolio - Anisatun Nafisa</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <link rel="stylesheet"
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>nafisa.anz | Personal Portfolio</title>
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
 <body>
 
-    <!-- NAVBAR (Slide 1) -->
-    <header class="navbar">
-        <div class="navbar-container">
-            <a href="#" class="brand-logo">nafisa.anz</a>
-            <nav class="nav-menu">
-                <a href="#home" class="nav-link">Home</a>
-                <a href="#about" class="nav-link">About</a>
-                <a href="#contact" class="nav-link">Contact</a>
-            </nav>
+  <!-- ================= NAVIGASI ================= -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="#" class="brand-logo">nafisa.anz</a>
+      <nav class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ================= HERO SECTION ================= -->
+    <section id="home" class="section hero-section">
+      <div class="hero-container">
+        <div class="hero-image-wrapper">
+          <!-- Placeholder Brush Frame Effect -->
+          <div class="brush-bg"></div>
+          <img src="{% static 'image/bg1.png' %}" alt="Anisatun Nafisa Profile" class="hero-img">
         </div>
-    </header>
+        <div class="hero-content">
+          <h1 class="hero-title">ANISATUN<br>NAFISA</h1>
+          <p class="hero-subtitle">Data Science Student | Web Developer</p>
+        </div>
+      </div>
+    </section>
 
-    <main>
-        <!-- HERO SECTION / HOME (Slide 1) -->
-        <section id="home" class="hero-section">
-            <div class="hero-container">
-                <div class="hero-image-wrapper">
-                    <!-- Placeholder untuk foto berlatar brush merah/terrakota -->
-                    <div class="hero-bg-brush"></div>
-                    <img src="{% static 'image/bg1.png' %}" alt="Profile" class="profile-img">
-                </div>
-                <div class="hero-content">
-                    <h1 class="hero-title">
-                        <span class="text-accent">ANISATUN</span>
-                        <span class="text-white">NAFISA</span>
-                    </h1>
-                    <p class="hero-subtitle">Data Science Student | Web Developer</p>
-                </div>
-            </div>
-        </section>
+    <!-- ================= ABOUT & INTRO SECTION ================= -->
+    <section id="about" class="section intro-section">
+      <div class="intro-container">
+        <div class="quote-box">
+          <h2 class="quote-title">Don't Know So<br>No darling,</h2>
+          <p class="quote-text">
+            Welcome to my project portfolio—part of a Web Application Development course assignment that sparked a genuine interest.
+          </p>
+        </div>
+      </div>
+    </section>
 
-        <!-- WELCOME SECTION (Slide 2) -->
-        <section class="welcome-section">
-            <div class="container-sm">
-                <h2 class="welcome-heading">
-                    Tak Kenal Maka<br>
-                    <span class="text-accent">Tak Sayang,</span>
-                </h2>
-                <p class="welcome-text">
-                    Selamat Datang di Project Portofolio saya. Bagian dari tugas Mata Kuliah Pengembangan Apk Web yang menumbuhkan minat tersendiri.
-                </p>
-            </div>
-        </section>
+    <section class="section bio-section">
+      <div class="bio-container">
+        <div class="art-graphic">
+          <img src="{% static 'image/bg3.png' %}" alt="Abstract Line Art Graphic" class="graphic-img">
+        </div>
+        <div class="bio-text">
+          <p>
+            I am a Data Science student (Class of 2024) at the State Islamic University (UIN) Salatiga with an interest in web development; this portfolio website is my first project successfully deployed under the guidance of my lecturer.
+          </p>
+        </div>
+      </div>
+    </section>
 
-        <!-- ABOUT SECTION (Slide 3) -->
-        <section id="about" class="about-section">
-            <div class="about-container">
-                <div class="about-avatar-wrapper">
-                    <!-- Ilustrasi siluet estetik -->
-                    <div class="avatar-glow"></div>
-                    <img src="{% static 'image/bg3.png' %}" alt="Siluet Ilustrasi" class="about-avatar">
-                </div>
-                <div class="about-content">
-                    <p>
-                        Saya adalah seorang mahasiswa Program Studi Sains Data angkatan 2024 di Universitas Islam Negeri (UIN) Salatiga yang tertarik di bidang pengembangan web dan web portofolio ini adalah project pertama saya yang berhasil di deploy atas arahan dari dosen saya.
-                    </p>
-                </div>
-            </div>
-        </section>
+    <!-- ================= BRAND / BUSINESS HIGHLIGHT ================= -->
+    <section class="section brand-highlight">
+      <div class="brand-container">
+        <div class="brand-logo-card">
+          <img src="{% static 'image/DM.png' %}" alt="DM Demi Masa Logo" class="dm-logo">
+        </div>
+        <h3 class="brand-title">Cetak & Sablon</h3>
+      </div>
+    </section>
 
-        <!-- SKILLS SECTION (Slide 4 & 5) -->
-        <section class="skills-section">
-            <div class="container">
-                <h2 class="section-title text-accent">SKILLS</h2>
-                <div class="skills-grid">
-                    <!-- Skill 1 -->
-                    <div class="skill-item">
-                        <span class="skill-name">Python</span>
-                        <div class="progress-bar-container">
-                            <div class="progress-bar" style="width: 50%;"></div>
-                        </div>
-                    </div>
-                    <!-- Skill 2 -->
-                    <div class="skill-item">
-                        <span class="skill-name">HTML</span>
-                        <div class="progress-bar-container">
-                            <div class="progress-bar" style="width: 50%;"></div>
-                        </div>
-                    </div>
-                    <!-- Skill 3 -->
-                    <div class="skill-item">
-                        <span class="skill-name">CSS</span>
-                        <div class="progress-bar-container">
-                            <div class="progress-bar" style="width: 55%;"></div>
-                        </div>
-                    </div>
-                    <!-- Skill 4 -->
-                    <div class="skill-item">
-                        <span class="skill-name">Ms. Word</span>
-                        <div class="progress-bar-container">
-                            <div class="progress-bar" style="width: 50%;"></div>
-                        </div>
-                    </div>
+    <!-- ================= CONTACT SECTION ================= -->
+     <section id="contact" class="section contact-section">
+        <div class="contact-container">
+            
+            <!-- Left Photo Collage -->
+             <div class="photo-collage">
+                <img src="{% static 'image/notadm.jpeg' %}" alt="Receipt work" class="collage-img">
+                <img src="{% static 'image/Kaos.jpeg' %}" alt="Screenprint work 1" class="collage-img">
+                <img src="{% static 'image/plastek.jpeg' %}" alt="Screenprint work 2" class="collage-img">
+                <img src="{% static 'image/Undangan.jpg' %}" alt="Invitation sample" class="collage-img">
+             </div>
+             
+             <!-- Right Contact Links -->
+              <div class="contact-details">
+                <h2 class="contact-title">Contact:</h2>
+                <div class="contact-buttons">
+                    <a href="mailto:kaossablondm@gmail.com" class="btn-contact">
+                        <span>kaossablondm@gmail.com</span>
+                        <div class="btn-icon">✉</div>
+                    </a>
+                    <a href="https://wa.me/62895421485092" class="btn-contact">
+                        <span>+62895-4214-85092</span>
+                        <div class="btn-icon">💬</div>
+                    </a>
+                    <a href="https://instagram.com/dmkaossablon" class="btn-contact">
+                        <span>@dmkaossablon</span>
+                        <div class="btn-icon">📷</div>
+                    </a>
+                    <a href="https://maps.app.goo.gl/b2MKEfQuQMEavVPy8" class="btn-contact">
+                        <span>Open Location</span>
+                        <div class="btn-icon">📌</div>
+                    </a>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- PROJECT TIMELINE SECTION (Slide 6) -->
-        <section class="project-section">
-            <div class="container">
-                <h2 class="section-title text-accent">PROJECT</h2>
-                <div class="timeline-container">
-                    <!-- Jalur garis kustom -->
-                    <div class="timeline-row row-top">
-                        <div class="timeline-node">
-                            <div class="node-dot"></div>
-                            <h3 class="node-title">Pengembangan Apk Web</h3>
-                            <p class="node-desc">Membuat Web Portofolio & di Deploy</p>
-                        </div>
-                        <div class="timeline-node">
-                            <div class="node-dot"></div>
-                            <h3 class="node-title">Big Data</h3>
-                            <p class="node-desc">Analisis Big Data menggunakan PySpark</p>
-                        </div>
-                        <div class="timeline-node">
-                            <div class="node-dot"></div>
-                            <h3 class="node-title">Kewirausahaan</h3>
-                            <p class="node-desc">Bikin Lumpia Ubi Ungu</p>
-                        </div>
-                    </div>
-                    
-                    <div class="timeline-connector-loop"></div>
+    <!-- ================= PROJECTS SECTION ================= -->
+    <section class="section projects-section">
+      <h2 class="section-heading">PROJECT</h2>
+      <div class="projects-grid">
+        
+        <!-- Card 1 -->
+        <article class="project-card">
+          <div class="card-image-box">
+            <img src="{% static 'image/Artikel.jpeg' %}" alt="Article WiFi Smart Campus">
+          </div>
+          <div class="card-body">
+            <h3>Article: WiFi Smart Campuss</h3>
+            <p>Processing campus WiFi data using colab</p>
+          </div>
+        </article>
 
-                    <div class="timeline-row row-bottom">
-                        <div class="timeline-node">
-                            <div class="node-dot"></div>
-                            <h3 class="node-title">Dashboard dan Laporan</h3>
-                        </div>
-                        <div class="timeline-node">
-                            <div class="node-dot"></div>
-                            <h3 class="node-title">Bikin Book Chapter</h3>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <!-- Card 2 -->
+        <article class="project-card">
+          <div class="card-image-box">
+            <img src="{% static 'image/PAW2.jpeg' %}" alt="Web App Development">
+          </div>
+          <div class="card-body">
+            <h3>Web App Development</h3>
+            <p>Building and deploying a portfolio website</p>
+          </div>
+        </article>
 
-        <!-- EXPERIENCE SECTION (Slide 7) -->
-        <section class="experience-section">
-            <div class="container">
-                <h2 class="section-title text-white font-large">PENGALAMAN</h2>
-                <div class="experience-list">
-                    <div class="exp-item">
-                        <h3 class="exp-title">HMPS Sains Data</h3>
-                        <p class="exp-subtitle">Div. Sosial dan Keagamaan</p>
-                    </div>
-                    <div class="exp-item">
-                        <h3 class="exp-title">KOPMA</h3>
-                        <p class="exp-subtitle">Anggota</p>
-                    </div>
-                    <div class="exp-item">
-                        <h3 class="exp-title">OSIS Madrasah Aliyah</h3>
-                        <p class="exp-subtitle">Anggota</p>
-                    </div>
-                    <div class="exp-item">
-                        <h3 class="exp-title">Balai Latihan Kerja</h3>
-                        <p class="exp-subtitle">Desain Mode</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <!-- Card 3 -->
+        <article class="project-card">
+          <div class="card-image-box">
+            <img src="{% static 'image/BookCptr.jpeg' %}" alt="Book Chapter">
+          </div>
+          <div class="card-body">
+            <h3>Creating a Book Chapter:</h3>
+            <p>Dashboard kehidupan mahasiswa (eksploratif sains data tentang adiksi digital...)</p>
+          </div>
+        </article>
 
-        <!-- CTA ACTION SECTION (Slide 8) -->
-        <section class="cta-section">
-            <div class="cta-container">
-                <div class="cta-image-side">
-                    <!-- Sisi kiri foto sepatu/estetik -->
-                    <img src="{% static 'image/bg2.jpg' %}" alt="Footwear Aesthetic" class="cta-img">
-                </div>
-                <div class="cta-buttons-side">
-                    <a href="{% static 'pdf/CVAnisatunNafisa.pdf' %}" target="_blank" class="btn-custom">CV</a>
-                    <a href="mailto:ajanafisa815@gmail.com?subject=Halo&body=Halo%20Annisatun,%20saya%20tertarik%20dengan%20portofolio%20Anda." class="btn-custom">Kirim Pesan</a>
-                </div>
-            </div>
-        </section>
+        <!-- Card 4 -->
+        <article class="project-card">
+          <div class="card-image-box">
+            <img src="{% static 'image/BigDT.jpeg' %}" alt="Big Data Analytics">
+          </div>
+          <div class="card-body">
+            <h3>Big Data Analytics</h3>
+            <p>Processing big data using PySpark</p>
+          </div>
+        </article>
 
-        <!-- SOCIAL MEDIA/CONTACT SECTION (Slide 9) -->
-        <section id="contact" class="social-section">
-            <div class="container text-center">
-                <h2 class="social-title text-accent">FOLLOW ME</h2>
-                <div class="social-icons-grid">
-                    <!-- Baris Atas -->
-                    <a href="https://wa.me/62882007112201" class="icon-link" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp" alt="WhatsApp"></i></a>
-                    <a href="https://instagram.com/nafisaaj.n" class="icon-link" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram" alt="Instagram"></i></a>
-                    <a href="https://tiktok.com/@aaanzz.999" class="icon-link" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-tiktok" alt="TikTok"></i></a>
-                    <a href="mailto:ajanafisa815@gmail.com" class="icon-link" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-envelope" alt="Email"></i></a>
-                    <!-- Baris Bawah -->
-                    <a href="https://x.com/nafisaabz" class="icon-link" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-x-twitter" alt="X"></i></a>
-                    <a href="https://youtube.com/@anisatunnnafisa18" class="icon-link" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-youtube" alt="YouTube"></i></a>
-                    <a href="https://linkedin.com/in/anisatun-nafisa" class="icon-link" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin" alt="LinkedIn"></i></a>
-                </div>
-            </div>
-        </section>
-    </main>
+        <!-- Card 5 -->
+        <article class="project-card">
+          <div class="card-image-box">
+            <img src="{% static 'image/lumpi.png' %}" alt="Food Products">
+          </div>
+          <div class="card-body">
+            <h3>Creating and Selling Food Products</h3>
+            <p>Purple Sweet Potato Spring Rolls with Chocolate and Cheese</p>
+          </div>
+        </article>
 
-    <!-- FOOTER -->
-    <footer class="footer">
-        <p>&copy; 2026 nafisa.anz. All Rights Reserved.</p>
-    </footer>
+        <!-- Add Project Placeholder Card -->
+        <article class="project-card add-card">
+          <div class="add-icon">+</div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ================= SKILLS SECTION ================= -->
+<section class="section skills-section">
+  <h2 class="section-heading skills-heading">SKILLS</h2>
+  
+  <div class="skills-container">
+    <!-- Baris Atas (3 Skills) -->
+    <div class="skills-row">
+      <div class="skill-card">
+        <div class="circle-progress" style="--percent: 50%;">
+          <div class="circle-inner">
+            <span class="percentage">50%</span>
+          </div>
+        </div>
+        <span class="skill-name">Python</span>
+      </div>
+
+      <div class="skill-card">
+        <div class="circle-progress" style="--percent: 50%;">
+          <div class="circle-inner">
+            <span class="percentage">50%</span>
+          </div>
+        </div>
+        <span class="skill-name">SQL</span>
+      </div>
+
+      <div class="skill-card">
+        <div class="circle-progress" style="--percent: 70%;">
+          <div class="circle-inner">
+            <span class="percentage">70%</span>
+          </div>
+        </div>
+        <span class="skill-name">HTML</span>
+      </div>
+    </div>
+
+    <!-- Baris Bawah (2 Skills) -->
+    <div class="skills-row">
+      <div class="skill-card">
+        <div class="circle-progress" style="--percent: 80%;">
+          <div class="circle-inner">
+            <span class="percentage">80%</span>
+          </div>
+        </div>
+        <span class="skill-name">Ms. Word</span>
+      </div>
+
+      <div class="skill-card">
+        <div class="circle-progress" style="--percent: 60%;">
+          <div class="circle-inner">
+            <span class="percentage">60%</span>
+          </div>
+        </div>
+        <span class="skill-name">CSS</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- ================= EXPERIENCE SECTION ================= -->
+    <section class="section experience-section">
+      <h2 class="section-heading">EXPERIENCE</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h3>Student Association Data Science</h3>
+            <p>Social and Religious Affairs Division</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h3>KOPMA</h3>
+            <p>Member</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h3>OSIS Madrasah Aliyah</h3>
+            <p>Member</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h3>IBS</h3>
+            <p>Cleanliness Division Coordinator</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= ACTION / CV & FEEDBACK SECTION ================= -->
+    <section class="section action-section">
+      <div class="action-container">
+        <div class="film-strip">
+          <img src="{% static 'image/anz1.jpeg' %}" alt="Photo Film 1">
+          <img src="{% static 'image/anz2.jpeg' %}" alt="Photo Film 2">
+        </div>
+        <div class="action-buttons">
+          <a href="{% static 'pdf/CVAnisatunNafisa.pdf' %}" target="_blank" class="btn-action">
+            CV
+            <span class="action-icon">✈️</span>
+          </a>
+          <a href="mailto:ajanafisa815@gmail.com?subject=Halo&body=Halo%20Annisatun,%20saya%20tertarik%20dengan%20portofolio%20Anda." class="btn-action">
+            Feedback
+            <span class="action-icon">✉️</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= FOLLOW ME SECTION ================= -->
+<section class="section follow-section">
+  <h2 class="follow-title">FOLLOW ME</h2>
+  
+  <div class="social-links-grid">
+    <!-- Baris 1 -->
+    <div class="social-row">
+      <a href="https://wa.me/62882007112201" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="WhatsApp">
+        <i class="fa-brands fa-whatsapp" alt="WhatsApp"></i>
+      </a>
+      <a href="https://instagram.com/nafisaaj.n" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Instagram">
+        <i class="fa-brands fa-instagram" alt="Instagram"></i>
+      </a>
+      <a href="https://tiktok.com/@aaanzz.999" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="TikTok">
+        <i class="fa-brands fa-tiktok" alt="TikTok"></i>
+      </a>
+      <a href="https://facebook.com/Anz_Z" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Facebook">
+        <i class="fa-brands fa-facebook" alt="Facebook"></i>
+      </a>
+    </div>
+
+    <!-- Baris 2 -->
+    <div class="social-row">
+      <a href="https://x.com/nafisaabz" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="X (Twitter)">
+        <i class="fa-brands fa-x" alt="X (Twitter)"></i>
+      </a>
+      <a href="httpss://youtube.com/@anisatunnnafisa18" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="YouTube">
+        <i class="fa-brands fa-youtube" alt="Youtube"></i>
+      </a>
+      <a href="https://linkedin.com/in/anisatun-nafisa" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="LinkedIn">
+        <i class="fa-brands fa-linkedin" alt="LinkedIn"></i>
+      </a>
+    </div>
+  </div>
+</section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <p>&copy; Anisatun Nafisa. SD'2024.</p>
+  </footer>
 
 </body>
 </html>
