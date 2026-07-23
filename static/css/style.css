@@ -669,3 +669,35 @@ body {
     font-size: 0.9rem;
 }
 
+/* ================= NEWS ADS SECTION ================= */
+.news-ads-section {
+  width: 100%;
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ads-label {
+  font-size: 0.85rem;
+  color: var(--text-muted, #a0aec0);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.8rem;
+  align-self: flex-start;
+}
+
+.ads-container {
+  width: 100%;
+  min-height: 250px; /* Memberikan ruang antisipasi sebelum iklan dimuat */
+  background: rgba(255, 255, 255, 0.03); /* Transparan gelap serasi dengan tema */
+  border: 1px dashed rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  padding: 1rem;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
